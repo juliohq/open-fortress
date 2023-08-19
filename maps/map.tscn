@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://t2ble8pmh5i1"]
+[gd_scene load_steps=4 format=3 uid="uid://t2ble8pmh5i1"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_4bll4"]
 [ext_resource type="TileSet" uid="uid://dyqiqhytekcjo" path="res://maps/tileset.tres" id="2_lggqy"]
+[ext_resource type="PackedScene" uid="uid://dam01xuy3eajr" path="res://units/archer.tscn" id="3_kpsv1"]
 
 [node name="Map" type="Node"]
 script = ExtResource("1_4bll4")
@@ -12,3 +13,7 @@ tile_set = ExtResource("2_lggqy")
 format = 2
 layer_0/name = "TERRAIN"
 layer_0/y_sort_enabled = true
+
+[node name="Archer" parent="Tiles" instance=ExtResource("3_kpsv1")]
+
+[node name="Camera" type="Camera2D" parent="."]
