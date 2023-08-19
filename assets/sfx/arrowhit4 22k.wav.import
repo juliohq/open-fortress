@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg7t2p330cdrc"
+path="res://.godot/imported/arrowhit4 22k.wav-2cda57126c8756ad5aac3417b7174437.sample"
+
+[deps]
+
+source_file="res://assets/sfx/arrowhit4 22k.wav"
+dest_files=["res://.godot/imported/arrowhit4 22k.wav-2cda57126c8756ad5aac3417b7174437.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

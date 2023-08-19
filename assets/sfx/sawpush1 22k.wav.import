@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dntbss2tvi8e6"
+path="res://.godot/imported/sawpush1 22k.wav-f8280b61764877cc7b3413266a69c58d.sample"
+
+[deps]
+
+source_file="res://assets/sfx/sawpush1 22k.wav"
+dest_files=["res://.godot/imported/sawpush1 22k.wav-f8280b61764877cc7b3413266a69c58d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

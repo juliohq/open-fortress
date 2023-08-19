@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br0lk8vm6w0st"
+path="res://.godot/imported/chop3 22k.wav-a24c784416dc732cc9e22d1f681ddeed.sample"
+
+[deps]
+
+source_file="res://assets/sfx/chop3 22k.wav"
+dest_files=["res://.godot/imported/chop3 22k.wav-a24c784416dc732cc9e22d1f681ddeed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

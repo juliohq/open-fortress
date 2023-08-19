@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bo2j4lo7x4lbc"
+path="res://.godot/imported/arrowswish2 22k.wav-c5fa66d7c4fd187cd679eedfb9d28b94.sample"
+
+[deps]
+
+source_file="res://assets/sfx/arrowswish2 22k.wav"
+dest_files=["res://.godot/imported/arrowswish2 22k.wav-c5fa66d7c4fd187cd679eedfb9d28b94.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
