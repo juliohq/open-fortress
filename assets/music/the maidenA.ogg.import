@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bafi11x6dylwy"
+path="res://.godot/imported/the maidenA.ogg-a9e297a9a29a3775322de3534faa12ec.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/the maidenA.ogg"
+dest_files=["res://.godot/imported/the maidenA.ogg-a9e297a9a29a3775322de3534faa12ec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
