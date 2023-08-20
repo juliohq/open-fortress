@@ -10,17 +10,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nsaf0")
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
 
-[node name="Vertical" type="VBoxContainer" parent="Center"]
+[node name="Vertical" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
-[node name="Asset" type="Label" parent="Center/Vertical"]
+[node name="Asset" type="Label" parent="Margin/Vertical"]
+unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="Load" type="ProgressBar" parent="Center/Vertical"]
-custom_minimum_size = Vector2(512, 32)
+[node name="Load" type="ProgressBar" parent="Margin/Vertical"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 16)
 layout_mode = 2
 show_percentage = false

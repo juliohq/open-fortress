@@ -1,8 +1,8 @@
 extends MarginContainer
 
 
-@onready var Asset = $Center/Vertical/Asset
-@onready var Load = $Center/Vertical/Load
+@onready var Asset = %Asset
+@onready var Load = %Load
 
 
 func _ready():
