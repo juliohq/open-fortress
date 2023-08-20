@@ -7,6 +7,8 @@ static var loaders: Array[GDScript]
 static var load_progress := 0
 ## How many assets there are to be loaded.
 static var asset_count := 0
+## Whether assets are loaded.
+static var is_loaded := false
 
 static var music := []
 static var sfx := []
@@ -29,6 +31,7 @@ static func register_loader(loader: GDScript):
 static func unload_assets():
 	for loader in loaders:
 		loader._unload_assets()
+	is_loaded = false
 
 
 static func load_assets(tree: SceneTree):
@@ -64,6 +67,8 @@ static func load_assets(tree: SceneTree):
 			loader._load_asset(ResourceLoader.load_threaded_get(file))
 			Events.asset_loaded.emit(file)
 			load_progress += 1
+	
+	is_loaded = true
 
 
 static func assets_in(path: String, extensions: PackedStringArray, recursive: bool = false) -> PackedStringArray:
