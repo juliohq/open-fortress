@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb3l330ymbj0n"]
+[gd_scene load_steps=4 format=3 uid="uid://bb3l330ymbj0n"]
 
 [ext_resource type="Script" path="res://units/unit.gd" id="1_f1ro1"]
+[ext_resource type="StyleBox" uid="uid://d14lky128efun" path="res://units/health_bg.tres" id="2_ffhua"]
+[ext_resource type="StyleBox" uid="uid://dbfh2vkgxhh67" path="res://units/health_fill.tres" id="3_2f4cy"]
 
 [node name="Unit" type="Node2D"]
 script = ExtResource("1_f1ro1")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
+
+[node name="Health" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = -52.0
+offset_right = 16.0
+offset_bottom = -48.0
+theme_override_styles/background = ExtResource("2_ffhua")
+theme_override_styles/fill = ExtResource("3_2f4cy")
+min_value = 1.0
+max_value = 1.0
+value = 1.0
+show_percentage = false
