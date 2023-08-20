@@ -10,6 +10,7 @@ script = ExtResource("1_f1ro1")
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
 
 [node name="Health" type="ProgressBar" parent="."]
+visible = false
 offset_left = -16.0
 offset_top = -52.0
 offset_right = 16.0
