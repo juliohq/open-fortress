@@ -88,7 +88,7 @@ class AssetLoader:
 	static func _recursive() -> bool:
 		return false
 	
-	static func _load_asset(asset: Resource):
+	static func _load_asset(_asset: Resource):
 		pass
 
 
