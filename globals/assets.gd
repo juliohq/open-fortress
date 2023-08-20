@@ -27,10 +27,8 @@ static func register_loader(loader: GDScript):
 
 
 static func unload_assets():
-	for ref in [
-		music,
-	]:
-		ref.clear()
+	for loader in loaders:
+		loader._unload_assets()
 
 
 static func load_assets(tree: SceneTree):
@@ -81,7 +79,6 @@ class AssetLoader:
 	static func _path() -> String:
 		return ""
 	
-	
 	static func _extensions() -> PackedStringArray:
 		return []
 	
@@ -89,6 +86,9 @@ class AssetLoader:
 		return false
 	
 	static func _load_asset(_asset: Resource):
+		pass
+	
+	static func _unload_assets():
 		pass
 
 
@@ -101,6 +101,9 @@ class MusicLoader extends AssetLoader:
 	
 	static func _load_asset(asset: Resource):
 		Assets.music.append(asset)
+	
+	static func _unload_assets():
+		Assets.music.clear()
 
 
 class SFXLoader extends AssetLoader:
@@ -112,6 +115,9 @@ class SFXLoader extends AssetLoader:
 	
 	static func _load_asset(asset: Resource):
 		Assets.sfx.append(asset)
+	
+	static func _unload_assets():
+		Assets.sfx.clear()
 
 
 class SpeechLoader extends AssetLoader:
@@ -123,6 +129,9 @@ class SpeechLoader extends AssetLoader:
 	
 	static func _load_asset(asset: Resource):
 		Assets.speech.append(asset)
+	
+	static func _unload_assets():
+		Assets.speech.clear()
 
 
 class SpriteLoader extends AssetLoader:
@@ -137,3 +146,6 @@ class SpriteLoader extends AssetLoader:
 	
 	static func _load_asset(asset: Resource):
 		Assets.sprites.append(asset)
+	
+	static func _unload_assets():
+		Assets.sprites.clear()
