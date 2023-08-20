@@ -51,8 +51,14 @@ static func load_assets(tree: SceneTree):
 			var err = ResourceLoader.load_threaded_request(file)
 			assert(err == OK)
 			
+			var ticks = 0
+			
 			while ResourceLoader.load_threaded_get_status(file) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-				await tree.process_frame
+				if ticks % 1_000 == 999:
+					await tree.process_frame
+					ticks = 0
+				else:
+					ticks += 1
 			
 			assert(ResourceLoader.load_threaded_get_status(file) == ResourceLoader.THREAD_LOAD_LOADED)
 			loader._load_asset(ResourceLoader.load_threaded_get(file))
