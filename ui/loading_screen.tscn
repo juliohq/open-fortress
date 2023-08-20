@@ -13,7 +13,14 @@ script = ExtResource("1_nsaf0")
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 2
 
-[node name="Load" type="ProgressBar" parent="Center"]
+[node name="Vertical" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+
+[node name="Asset" type="Label" parent="Center/Vertical"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Load" type="ProgressBar" parent="Center/Vertical"]
 custom_minimum_size = Vector2(512, 32)
 layout_mode = 2
 show_percentage = false
