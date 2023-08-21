@@ -45,13 +45,13 @@ static func load_assets(tree: SceneTree):
 	for loader in loaders:
 		var path: String = loader._path()
 		var extensions: PackedStringArray = loader._extensions()
-		asset_count += assets_in(path, extensions, loader._recursive()).size()
+		asset_count += loader._assets(path, extensions, loader._recursive()).size()
 	
 	# Load assets
 	for loader in loaders:
 		var path: String = loader._path()
 		var extensions: PackedStringArray = loader._extensions()
-		var assets = assets_in(path, extensions, loader._recursive())
+		var assets = loader._assets(path, extensions, loader._recursive())
 		assert(assets)
 		
 		for file in assets:
@@ -77,22 +77,21 @@ static func load_assets(tree: SceneTree):
 	is_loaded = true
 
 
-static func assets_in(path: String, extensions: PackedStringArray, recursive: bool = false) -> PackedStringArray:
-	var array = []
-	
-	if recursive:
-		for directory in DirAccess.get_directories_at(path):
-			var next = path.path_join(directory)
-			array.append_array(assets_in(next, extensions, true))
-	
-	for file in DirAccess.get_files_at(path):
-		if file.get_extension() in extensions:
-			array.append(path.path_join(file))
-	
-	return array
-
-
 class AssetLoader:
+	static func _assets(path: String, extensions: PackedStringArray, recursive: bool = false) -> PackedStringArray:
+		var array = []
+		
+		if recursive:
+			for directory in DirAccess.get_directories_at(path):
+				var next = path.path_join(directory)
+				array.append_array(_assets(next, extensions, true))
+		
+		for file in DirAccess.get_files_at(path):
+			if file.get_extension() in extensions:
+				array.append(path.path_join(file))
+		
+		return array
+	
 	static func _path() -> String:
 		return ""
 	
