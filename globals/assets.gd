@@ -192,7 +192,7 @@ class UnitLoader extends AssetLoader:
 		return "res://units/"
 	
 	static func _extensions() -> PackedStringArray:
-		return ["remap"]
+		return ["tscn", "remap"]
 	
 	static func _should_load(asset: Resource) -> bool:
 		if not asset is PackedScene:
