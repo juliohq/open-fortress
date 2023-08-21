@@ -23,6 +23,7 @@ static func _static_init():
 	register_loader(SFXLoader)
 	register_loader(SpeechLoader)
 	register_loader(SpriteLoader)
+	register_loader(AnimationLoader)
 	register_loader(UnitLoader)
 
 
