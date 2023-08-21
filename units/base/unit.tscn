@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb3l330ymbj0n"]
 
-[ext_resource type="Script" path="res://units/unit.gd" id="1_f1ro1"]
+[ext_resource type="Script" path="res://units/base/unit.gd" id="1_f1ro1"]
 [ext_resource type="StyleBox" uid="uid://d14lky128efun" path="res://units/health_bg.tres" id="2_ffhua"]
 [ext_resource type="StyleBox" uid="uid://dbfh2vkgxhh67" path="res://units/health_fill.tres" id="3_2f4cy"]
 

@@ -14,6 +14,8 @@ static var music := []
 static var sfx := []
 static var speech := []
 static var sprites := []
+static var animations := []
+static var units := []
 
 
 static func _static_init():
@@ -21,6 +23,7 @@ static func _static_init():
 	register_loader(SFXLoader)
 	register_loader(SpeechLoader)
 	register_loader(SpriteLoader)
+	register_loader(UnitLoader)
 
 
 static func register_loader(loader: GDScript):
@@ -64,8 +67,10 @@ static func load_assets(tree: SceneTree):
 					ticks += 1
 			
 			assert(ResourceLoader.load_threaded_get_status(file) == ResourceLoader.THREAD_LOAD_LOADED)
-			loader._load_asset(ResourceLoader.load_threaded_get(file))
-			Events.asset_loaded.emit(file)
+			var asset = ResourceLoader.load_threaded_get(file)
+			if loader._should_load(asset):
+				loader._load_asset(asset)
+				Events.asset_loaded.emit(file)
 			load_progress += 1
 	
 	is_loaded = true
@@ -95,6 +100,9 @@ class AssetLoader:
 	
 	static func _recursive() -> bool:
 		return false
+	
+	static func _should_load(_asset: Resource) -> bool:
+		return true
 	
 	static func _load_asset(_asset: Resource):
 		pass
@@ -160,3 +168,43 @@ class SpriteLoader extends AssetLoader:
 	
 	static func _unload_assets():
 		Assets.sprites.clear()
+
+
+class AnimationLoader extends AssetLoader:
+	static func _path() -> String:
+		return "res://units/"
+	
+	static func _extensions() -> PackedStringArray:
+		return ["tres"]
+	
+	static func _should_load(asset: Resource) -> bool:
+		return asset is SpriteFrames
+	
+	static func _load_asset(asset: Resource):
+		Assets.units.append(asset)
+	
+	static func _unload_assets():
+		Assets.units.clear()
+
+
+class UnitLoader extends AssetLoader:
+	static func _path() -> String:
+		return "res://units/"
+	
+	static func _extensions() -> PackedStringArray:
+		return ["remap"]
+	
+	static func _should_load(asset: Resource) -> bool:
+		if not asset is PackedScene:
+			return false
+		
+		var unit = asset.instantiate()
+		var is_valid = unit is Unit
+		unit.free()
+		return is_valid
+	
+	static func _load_asset(asset: Resource):
+		Assets.units.append(asset)
+	
+	static func _unload_assets():
+		Assets.units.clear()

@@ -1,4 +1,5 @@
 extends Node2D
+class_name Unit
 
 
 const TILE_TRANSFORM = Vector2(1.0, 0.5)
