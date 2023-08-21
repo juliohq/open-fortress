@@ -16,7 +16,7 @@ func _input(event):
 
 
 func restart_mission():
-	pass
+	get_tree().reload_current_scene()
 
 
 func show_options():
