@@ -15,5 +15,17 @@ func _input(event):
 		queue_free()
 
 
+func restart_mission():
+	pass
+
+
+func show_options():
+	pass
+
+
+func quit_mission():
+	pass
+
+
 func quit_game():
 	get_tree().quit()

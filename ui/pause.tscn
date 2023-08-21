@@ -24,6 +24,7 @@ theme_override_constants/separation = 16
 
 [node name="Header" type="Label" parent="Center/Vertical"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Game Paused"
 
 [node name="Buttons" type="VBoxContainer" parent="Center/Vertical"]
@@ -32,6 +33,14 @@ layout_mode = 2
 [node name="Resume" type="Button" parent="Center/Vertical/Buttons"]
 layout_mode = 2
 text = "Resume"
+
+[node name="RestartMission" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Restart Mission"
+
+[node name="Options" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Options"
 
 [node name="QuitMission" type="Button" parent="Center/Vertical/Buttons"]
 layout_mode = 2
@@ -42,4 +51,7 @@ layout_mode = 2
 text = "Quit Game"
 
 [connection signal="pressed" from="Center/Vertical/Buttons/Resume" to="." method="queue_free"]
+[connection signal="pressed" from="Center/Vertical/Buttons/RestartMission" to="." method="restart_mission"]
+[connection signal="pressed" from="Center/Vertical/Buttons/Options" to="." method="show_options"]
+[connection signal="pressed" from="Center/Vertical/Buttons/QuitMission" to="." method="quit_mission"]
 [connection signal="pressed" from="Center/Vertical/Buttons/QuitGame" to="." method="quit_game"]
