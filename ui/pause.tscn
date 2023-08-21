@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cybp5t4yegyxw"]
+
+[ext_resource type="Script" path="res://ui/pause.gd" id="1_1jlms"]
+
+[node name="Pause" type="MarginContainer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jlms")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="Vertical" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="Label" parent="Center/Vertical"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Paused"
+
+[node name="Buttons" type="VBoxContainer" parent="Center/Vertical"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartMission" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Restart Mission"
+
+[node name="Options" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitMission" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Quit Mission"
+
+[node name="QuitGame" type="Button" parent="Center/Vertical/Buttons"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="Center/Vertical/Buttons/Resume" to="." method="queue_free"]
+[connection signal="pressed" from="Center/Vertical/Buttons/RestartMission" to="." method="restart_mission"]
+[connection signal="pressed" from="Center/Vertical/Buttons/Options" to="." method="show_options"]
+[connection signal="pressed" from="Center/Vertical/Buttons/QuitMission" to="." method="quit_mission"]
+[connection signal="pressed" from="Center/Vertical/Buttons/QuitGame" to="." method="quit_game"]

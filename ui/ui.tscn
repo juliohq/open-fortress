@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxthrpmvmg6u"]
+
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_yhv17"]
+[ext_resource type="PackedScene" uid="uid://cybp5t4yegyxw" path="res://ui/pause.tscn" id="2_d2gfa"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_yhv17")
+pause_scene = ExtResource("2_d2gfa")
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
