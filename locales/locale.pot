@@ -1,0 +1,36 @@
+# LANGUAGE translation for Open Fortress for the following files:
+# res://ui/pause.tscn
+#
+# FIRST AUTHOR < EMAIL @ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Fortress\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: ui/pause.tscn
+msgid "PAUSE_HEADER"
+msgstr ""
+
+#: ui/pause.tscn
+msgid "PAUSE_RESUME"
+msgstr ""
+
+#: ui/pause.tscn
+msgid "PAUSE_RESTART_MISSION"
+msgstr ""
+
+#: ui/pause.tscn
+msgid "OPTIONS"
+msgstr ""
+
+#: ui/pause.tscn
+msgid "PAUSE_QUIT_MISSION"
+msgstr ""
+
+#: ui/pause.tscn
+msgid "QUIT_GAME"
+msgstr ""
